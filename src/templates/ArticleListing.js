@@ -1,55 +1,40 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Tag from "../components/tag"
 import { GatsbyImage as CoverImage, getImage } from 'gatsby-plugin-image' // use the GatsbyImage but if you want to custom it.
 
-const ArticleListing = ({ location  }) => {
-  const data = useStaticQuery(graphql
-    `
-      {
-        allMarkdownRemark(
-          limit: 1000, 
-          sort: {
-            fields: 
-            frontmatter___date, 
-            order: ASC
-          }) {
-          nodes {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              description
-              tags
-              featuredimage {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 500
-                    blurredOptions: {width: 100}
-                    placeholder: BLURRED
-                    transformOptions: {cropFocus: CENTER}
-                    aspectRatio: 0.7
-                  )
-                }
-              }
-            }
+const ArticleListing = ({ location, post }) => {
+  const data = useStaticQuery(graphql // This is line 9. Where the same error message 
+  `
+    query MyQuery {
+      allMarkdownRemark(
+        limit: 1000, 
+        sort: {
+          fields: 
+          frontmatter___date, order: ASC}) 
+        {
+        nodes {
+          id
+          fields {
+            slug
           }
-          group(field: frontmatter___tags) {
-            totalCount
-            fieldValue
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            description
+            tag
+            featuredimage
           }
         }
-      }  
-  ` )
+      }
+    }
+` )
 
-
-const siteTitle = data.site.siteMetadata.title || ``
+const siteTitle = data.site?.siteMetadata?.title || ``
 const posts = data.allMarkdownRemark.nodes 
 
-if (post.length === 0) { // is message tell us if there no post being display post this message
+if (post?.length === 0) { // is message tell us if there no post being display post this message
   return (
     <div id="content">
         <Layout location={location} title={siteTitle}>
@@ -62,11 +47,13 @@ if (post.length === 0) { // is message tell us if there no post being display po
 
   return ( // This where you be rendering your post.
     <div id="content">
-      <Layout location={location} >
+      <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-
+        
+        <Tag />
+        
         <ol className="inline_blog" style={{ listStyle: `none` }}>
-                {posts.length > 0 && posts.map((post) => { // When is no post you will get this error message but when is post you will not get a error message.
+                {posts?.length > 0 && posts.map((post) => { // When is no post you will get this error message but when is post you will not get a error message.
                 const title = post.frontmatter.title || post.fields.slug
 
                 let image = getImage(post.frontmatter.featuredimage) // this is getting the post cover image

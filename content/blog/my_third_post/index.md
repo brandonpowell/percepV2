@@ -3,7 +3,7 @@ title: A brief history of Perception Works
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 date: "2015-05-06T23:46:37.121Z"
 featuredimage: "../hello-world/salty_egg.jpg"
-tags:
+tag:
     - "dog"
     - "cat"
     - "moscus"

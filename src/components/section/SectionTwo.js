@@ -125,7 +125,7 @@ const StyledLayout = styled.div`
 
   .social h5 {
     font-size: 13pt !important;
-    margin-bottom: 0px !important;
+    margin-right: 20px !important;
     line-height: normal !important;
     width: 100%;
     max-width: 93px;

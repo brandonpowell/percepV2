@@ -1,10 +1,10 @@
 // This for the Blog
 module.exports = {
   siteMetadata: {
-    title: `Perception Works | Playhouse Fun. Create. Win. and Be Bless.`,
+    title: `Perception Works | Welcome to the Playhouse! Fun. Create. Win. and Be Bless.`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Brandon Powell`,
+      summary: `who ready for the future of creators. dreames. believers.`,
     },
     description: `We are here to make this world more accessilbe for everyone.`,
     siteUrl: `https://www.perception.works`,
@@ -162,37 +162,7 @@ module.exports = {
 //   },
 // } 
 
-// // This for Social Media module exports for Perception Works
-// module.exports = {
-//   siteMetadata: {
-//     title: `Gatsby`,
-//     siteUrl: `https://www.gatsbyjs.com`,
-//     description: `Blazing fast modern site generator for React`,
-//     social: {
-//       twitter: 'some twitter'
-//     }
-//   },
-// } 
-
-// module.exports = {
-//   siteMetadata: {
-//     title: `Gatsby`,
-//     siteUrl: `https://www.gatsbyjs.com`,
-//     description: `Blazing fast modern site generator for React`,
-//     social: {
-//       twitter: 'some twitter'
-//     }
-//   },
-//} 
 
 
-// module.exports = {
-//   siteMetadata: {
-//     title: `Gatsby`,
-//     siteUrl: `https://www.gatsbyjs.com`,
-//     description: `Blazing fast modern site generator for React`,
-//     social: {
-//       twitter: 'some twitter'
-//     }
-//   },
-// } 
+
+

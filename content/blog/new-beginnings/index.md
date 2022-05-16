@@ -2,7 +2,7 @@
 title: A brief history of Perception Works
 date: "2015-05-28T22:40:32.169Z"
 featuredimage: "../new-beginnings/salty_egg.jpg"   
-tags:
+tag:
     - "dog"
     - "cat"
     - "moscus"
