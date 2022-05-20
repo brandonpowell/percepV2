@@ -33,9 +33,11 @@ const Tag = ({ pageContext }) => {
   ` )
  
   const tag = pageContext?.tag
-    const { edges = {}, totalCount = {} } = data?.allMarkdownRemark //Total count of tags being display
+    //const { edges = {}, totalCount = {} } = data?.allMarkdownRemark //Total count of tags being display
     //const { edges, totalCount } = data?.allMarkdownRemark
-    //const { edges, totalCount } = data?.allMarkdownRemark || { }
+    const { edges, totalCount } = data?.allMarkdownRemark || { }
+    //const { edges, totalCount } = data.allMarkdownRemark
+    console.log(edges, totalCount);
 
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
