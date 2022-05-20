@@ -48,6 +48,7 @@ const Tag = ({ pageContext }) => {
       <h1>{tagHeader}</h1>
         <ul>
             {edges?.map(({ node }) => {// Think what this doing map the tags
+                console.log(edges?.map);
                 const { slug } = node.fields // This is the slug or link for the tags
                 const { title } = node.frontmatter // This is the site frontmatter but mostly markdown
                 return (
